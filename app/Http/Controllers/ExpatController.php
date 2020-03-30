@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Events\ExpatReported;
 use App\Models\Expat;
-use App\Models\User;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -17,16 +16,20 @@ class ExpatController extends Controller
      */
     public function showIndex()
     {
-        /** @var User $user */
-        $user = auth()->user();
+        $data = [];
 
         if (auth()->user()->role === 'user') {
-            $expats = $user->expats()->paginate();
+            $data['title'] = 'My Reported Expats List';
+            $data['expats'] = Expat::select(['id', 'full_name', 'location', 'quarantine_status', 'case_status'])
+                ->where('user_id', auth()->user()->getAuthIdentifier())
+                ->get();
         } else {
-            $expats = Expat::paginate();
+            $data['title'] = 'All Expats List';
+            $data['expats'] = Expat::select(['id', 'full_name', 'location', 'quarantine_status', 'case_status'])
+                ->get();
         }
 
-        return view('expat.index', compact('expats'));
+        return view('expat.index', $data);
     }
 
     /**

@@ -54,16 +54,18 @@
                 </a>
             </li>
 
-            <li class="nav-item {{ (Request::is('reports/*') ? 'actived' : '') }}">
-                <a class="sidebar-link" href="{{ route('reports') }}">
+            @if(optional(auth()->user())->role !== 'user')
+                <li class="nav-item {{ (Request::is('reports/*') ? 'actived' : '') }}">
+                    <a class="sidebar-link" href="{{ route('reports') }}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-files"></i>
                     </span>
-                    <span class="title">
+                        <span class="title">
                         Reports
                     </span>
-                </a>
-            </li>
+                    </a>
+                </li>
+            @endif
         </ul>
     </div>
 </div>

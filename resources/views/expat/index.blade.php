@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
                 <h4 class="c-grey-900 mB-20">
-                    Expats List
+                    {{ $title }}
                 </h4>
 
                 <table class="table" id="dataTable">
