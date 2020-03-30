@@ -50,7 +50,7 @@ class AuthController extends Controller
             event(new Registered($user));
 
             session()->flash('type', 'success');
-            session()->flash('message', 'Your account is registered. Please check your email to verify the account.');
+            session()->flash('message', 'Your account is registered. Please login first and check your email to verify the account.');
 
             return redirect()->route('login');
         } catch (Exception $e) {

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Expat Finder'),
+    'name' => env('APP_NAME', 'Expat COVID Finder'),
 
     /*
     |--------------------------------------------------------------------------
