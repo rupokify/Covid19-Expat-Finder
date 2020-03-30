@@ -74,7 +74,7 @@
     <div class="d-n@sm- peer peer-greed h-100 pos-r bgr-n bgpX-c bgpY-c bgsz-cv" style="background-image:url({{ url('assets/static/images/bg.jpg') }})">
         <div class="pos-a centerXY">
             <div class="bgc-white bdrs-50p pos-r" style="width:120px;height:120px">
-                <img class="pos-a centerXY" src="{{ url('assets/static/images/logo.png') }}" alt="{{ config('app.name') }}">
+                <img class="pos-a centerXY" src="{{ asset('assets/static/images/logo.png') }}" alt="{{ config('app.name') }}">
             </div>
         </div>
     </div>
