@@ -24,6 +24,7 @@ Route::group([], function () {
     Route::get('/reports', 'DashboardController@showReports')->name('reports');
 
     Route::get('/expats', 'ExpatController@showIndex')->name('expats.index');
+    Route::get('/expats-map', 'ExpatController@expatsMap')->name('expats.map');
     Route::get('/add-expat', 'ExpatController@addExpatForm')->name('expats.create');
     Route::post('/add-expat', 'ExpatController@addExpat');
 });

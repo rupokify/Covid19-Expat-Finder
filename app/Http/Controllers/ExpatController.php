@@ -15,6 +15,14 @@ class ExpatController extends Controller
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+    public function expatsMap()
+    {
+        return view('expat.map');
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function addExpatForm()
     {
         return view('expat.create');
