@@ -83,7 +83,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'selim@kodeeo.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no-reply@mol.la'),
         'name' => env('MAIL_FROM_NAME', 'Expat COVID Finder'),
     ],
 
