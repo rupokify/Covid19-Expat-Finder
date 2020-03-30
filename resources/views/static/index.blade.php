@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -44,7 +44,7 @@
                     <!-- Logo -->
                     <div class="col-xl-2 col-lg-2 col-md-2">
                         <div class="logo">
-                            <a href="{{ route('index') }}"><img src="{{ asset('assets/static/images/logo/logo.png') }} " alt=""></a>
+                            <a href="{{ route('home') }}"><img src="{{ asset('assets/static/images/logo/logo.png') }} " alt=""></a>
                         </div>
                     </div>
 
@@ -53,7 +53,7 @@
                         <div class="main-menu f-right d-none d-lg-block">
                             <nav>
                                 <ul id="navigation">
-                                    <li class="active"><a href="{{ route('index') }}"> Home</a></li>
+                                    <li class="active"><a href="{{ route('home') }}"> Home</a></li>
                                     <li><a href="http://corona.gov.bd/" target="_blank">COVID-19</a></li>
                                 </ul>
                             </nav>
@@ -281,8 +281,6 @@
 
 </footer>
 
-<!-- JS here -->
-
 <!-- All JS Custom Plugins Link Here here -->
 <script src="{{ asset('assets/js/vendor/modernizr-3.5.0.min.js') }}"></script>
 
@@ -293,11 +291,6 @@
 <!-- Jquery Mobile Menu -->
 <script src="{{ asset('assets/js/jquery.slicknav.min.js') }}"></script>
 
-<!-- Jquery Slick , Owl-Carousel Plugins -->
-<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('assets/js/slick.min.js') }}"></script>
-<!-- Date Picker -->
-<script src="{{ asset('assets/js/gijgo.min.js') }}"></script>
 <!-- One Page, Animated-HeadLin -->
 <script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <script src="{{ asset('assets/js/animated.headline.js') }}"></script>
@@ -307,13 +300,6 @@
 <script src="{{ asset('assets/js/jquery.scrollUp.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-
-<!-- contact js -->
-<script src="{{ asset('assets/js/contact.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.form.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.validate.min.js') }}"></script>
-<script src="{{ asset('assets/js/mail-script.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.ajaxchimp.min.js') }}"></script>
 
 <!-- Jquery Plugins, main Jquery -->
 <script src="{{ asset('assets/js/plugins.js') }}"></script>

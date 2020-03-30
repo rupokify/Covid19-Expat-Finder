@@ -1,12 +1,15 @@
-<div class="alert alert-danger">
-    Your profile is not verified.
-    <a href="{{ route('verification') }}">
-        Please upload a valid identification document to verify your profile now.
-    </a>
-</div>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 
-<div class="alert alert-success">
-    <a href="{{ route('expats.create') }}">
-        Report an expat case of your area.
-    </a>
-</div>
+@if(session()->has('message'))
+    <div class="alert alert-{{ session('type') }}">
+        {{ session('message') }}
+    </div>
+@endif

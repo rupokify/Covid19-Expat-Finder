@@ -9,7 +9,7 @@
                 <div class="form-group row">
                     <div class="col-md-12">
                         <label for="search"></label>
-                        <input type="text" name="search" class="form-control" id="search" name="search" placeholder="Search">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="Search">
                     </div>
                 </div>
             </form>

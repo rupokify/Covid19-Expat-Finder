@@ -82,15 +82,7 @@
     <div class="col-12 col-md-4 peer pX-40 pY-80 h-100 bgc-white scrollable pos-r" style="min-width:320px">
         <h4 class="fw-300 c-grey-900 mB-40">Register to {{ config('app.name') }}</h4>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('partials._message')
 
         <form action="{{ route('register') }}" method="post">
             @csrf

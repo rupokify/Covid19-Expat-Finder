@@ -1,21 +1,20 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
+use Exception;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class AuthController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('guest');
-    }
-
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function showLogin()
     {
@@ -23,7 +22,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function showRegister()
     {
@@ -50,10 +49,12 @@ class AuthController extends Controller
             $user = User::create($inputs);
             event(new Registered($user));
 
+            session()->flash('type', 'success');
             session()->flash('message', 'Your account is registered.');
 
             return redirect()->route('login');
         } catch (Exception $e) {
+            session()->flash('type', 'danger');
             session()->flash('message', $e->getMessage());
 
             return redirect()->back();
@@ -61,7 +62,7 @@ class AuthController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param  Request  $request
      * @return RedirectResponse
      */
     public function authenticate(Request $request)
@@ -77,6 +78,7 @@ class AuthController extends Controller
             return redirect()->route('home');
         }
 
+        session()->flash('type', 'danger');
         session()->flash('message', 'Invalid credentials.');
 
         return redirect()->back();
