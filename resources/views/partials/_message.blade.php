@@ -13,3 +13,9 @@
         {{ session('message') }}
     </div>
 @endif
+
+@if(session('verified'))
+    <div class="alert alert-success">
+        Your account is verified now. Please login to start using our service.
+    </div>
+@endif

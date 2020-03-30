@@ -5,30 +5,30 @@
             <h6 class="c-grey-900">Profile</h6>
 
             <div class="mT-30">
+                @include('partials._message')
+
                 <form action="{{ route('profile') }}" method="post" class="container" id="needs-validation" novalidate>
+                    @csrf
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="full_name">Full Name</label>
-                            <input name="full_name" id="full_name" type="text" class="form-control" placeholder="Your Full Name" required>
+                            <input name="full_name" id="full_name" type="text" class="form-control" value="{{ $user->full_name }}" required>
                             <div class="invalid-feedback">Please provide your full name.</div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
-                            <label for="mobile_number">Mobile Number</label>
-                            <input name="mobile_number" id="mobile_number" type="text" class="form-control" placeholder="+880" required>
-                            <small id="mobile_number_help" class="form-text text-muted">
-                                We'll never share your mobile number with anyone else.
-                            </small>
-                            <div class="invalid-feedback">Please provide your valid mobile number.</div>
+                            <label for="email">Email</label>
+                            <input name="email" id="email" type="text" class="form-control" value="{{ $user->email }}" readonly>
+                            <div class="invalid-feedback">Please provide your valid email address.</div>
                         </div>
                     </div>
 
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="location">Location</label>
-                            <input name="location" id="location" type="text" class="form-control" placeholder="Your Location" required>
+                            <input name="location" id="location" type="text" class="form-control" value="{{ $user->location }}" required>
                             <small id="location_help" class="form-text text-muted">
                                 We'll never share your location with anyone else.
                             </small>

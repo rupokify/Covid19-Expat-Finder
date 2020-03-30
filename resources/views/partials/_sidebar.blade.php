@@ -33,7 +33,7 @@
 
         <ul class="sidebar-menu scrollable pos-r">
             <li class="nav-item mT-30 {{ (Request::is('/') ? 'actived' : '') }}">
-                <a class="sidebar-link" href="{{ route('home') }}">
+                <a class="sidebar-link" href="{{ route('dashboard') }}">
                     <span class="icon-holder">
                         <i class="c-blue-500 ti-home"></i>
                     </span>

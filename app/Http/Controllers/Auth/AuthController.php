@@ -50,7 +50,7 @@ class AuthController extends Controller
             event(new Registered($user));
 
             session()->flash('type', 'success');
-            session()->flash('message', 'Your account is registered.');
+            session()->flash('message', 'Your account is registered. Please check your email to verify the account.');
 
             return redirect()->route('login');
         } catch (Exception $e) {
@@ -75,7 +75,7 @@ class AuthController extends Controller
         $credentials = $request->except(['_token']);
 
         if (auth()->attempt($credentials)) {
-            return redirect()->route('home');
+            return redirect()->route('dashboard');
         }
 
         session()->flash('type', 'danger');
@@ -90,6 +90,7 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
+        session()->flash('type', 'success');
         session()->flash('message', 'You have been logged out.');
 
         return redirect()->route('login');
