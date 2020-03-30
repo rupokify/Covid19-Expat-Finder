@@ -21,6 +21,10 @@
             visibility: hidden
         }
 
+        #map {
+            height: 600px;
+        }
+
         .spinner {
             width: 40px;
             height: 40px;

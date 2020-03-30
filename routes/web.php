@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'StaticController@index')->name('home');
+Route::get('/expats-map', 'ExpatController@expatsMap')->name('expats.map');
 
 Route::group(['middleware' => 'guest', 'namespace' => 'Auth'], function () {
     Route::get('/login', 'AuthController@showLogin')->name('login');
