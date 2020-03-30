@@ -21,4 +21,14 @@ class Expat extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function getQuarantineStatusTextAttribute()
+    {
+        return $this->quarantine_status ? 'Quarantined' : 'Not Quarantined';
+    }
+
+    public function getQuarantineLabelAttribute()
+    {
+        return $this->quarantine_status ? 'success' : 'danger';
+    }
 }

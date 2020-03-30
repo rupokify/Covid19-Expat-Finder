@@ -1,27 +1,20 @@
 @extends('layouts.master')
 
+@section('style')
+    <link href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+@endsection
+
 @section('content')
     @include('partials._message')
 
     <div class="row">
-        <div class="col-md-12">
-            <form action="{{ route('expats.index') }}" method="get">
-                <div class="form-group row">
-                    <div class="col-md-12">
-                        <label for="search"></label>
-                        <input type="text" class="form-control" id="search" name="search" placeholder="Search">
-                    </div>
-                </div>
-            </form>
-        </div>
-
         <div class="col-md-12">
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
                 <h4 class="c-grey-900 mB-20">
                     Expats List
                 </h4>
 
-                <table class="table">
+                <table class="table" id="dataTable">
                     <thead class="thead-dark">
                     <tr>
                         <th scope="col">Name</th>
@@ -31,12 +24,18 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>John Doe</td>
-                        <td>Mirpur DOHS</td>
-                        <td><span class="badge badge-danger">Not Quarantined</span></td>
-                        <td><span class="badge badge-danger">Report Sent to LE</span></td>
-                    </tr>
+                    @foreach ($expats as $expat)
+                        <tr>
+                            <td>{{ $expat->full_name }}</td>
+                            <td>{{ $expat->location }}</td>
+                            <td>
+                            <span class="badge badge-{{ $expat->quarantine_label }}">
+                                {{ $expat->quarantine_status_text }}
+                            </span>
+                            </td>
+                            <td>{{ $expat->case_status }}</td>
+                        </tr>
+                    @endforeach
                     </tbody>
                 </table>
             </div>

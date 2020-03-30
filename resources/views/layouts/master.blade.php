@@ -60,6 +60,7 @@
         }
     </style>
     <link href="{{ asset('assets/style.css') }}" rel="stylesheet">
+    @yield('style')
 </head>
 
 <body class="app">
@@ -95,5 +96,6 @@
 </div>
 <script src="{{ asset('assets/vendor.js') }}"></script>
 <script src="{{ asset('assets/bundle.js') }}"></script>
+@yield('script')
 </body>
 </html>

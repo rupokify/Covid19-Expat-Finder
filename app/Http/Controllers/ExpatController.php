@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\ExpatReported;
 use App\Models\Expat;
+use App\Models\User;
 use Exception;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
@@ -16,7 +17,16 @@ class ExpatController extends Controller
      */
     public function showIndex()
     {
-        return view('expat.index');
+        /** @var User $user */
+        $user = auth()->user();
+
+        if (auth()->user()->role === 'user') {
+            $expats = $user->expats()->paginate();
+        } else {
+            $expats = Expat::paginate();
+        }
+
+        return view('expat.index', compact('expats'));
     }
 
     /**
@@ -53,7 +63,7 @@ class ExpatController extends Controller
             session()->flash('type', 'success');
             session()->flash('message', 'Your report has been stored. We will forward it to the respected authority.');
 
-            return redirect()->route('dashboard');
+            return redirect()->route('expats.index');
         } catch (Exception $e) {
             session()->flash('type', 'danger');
             session()->flash('message', $e->getMessage());
