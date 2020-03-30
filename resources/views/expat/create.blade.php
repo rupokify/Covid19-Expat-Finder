@@ -9,6 +9,7 @@
 
             <div class="mT-30">
                 <form action="{{ route('expats.create') }}" method="post" class="container" id="needs-validation" novalidate>
+                    @csrf
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="full_name">Expat Name</label>
@@ -100,7 +101,7 @@
                                     <div class="input-group-addon bgc-white bd bdwR-0">
                                         <i class="ti-calendar"></i>
                                     </div>
-                                    <input name="date_of_arrival" id="date_of_arrival" type="text" class="form-control bdc-grey-200 start-date" data-provide="datepicker">
+                                    <input name="date_of_arrival" id="date_of_arrival" data-date-format="yyyy-mm-dd" type="text" class="form-control bdc-grey-200 start-date" data-provide="datepicker">
                                     <small id="date_of_arrival_help" class="form-text text-muted">
                                         Please mention possible arrival date of the expat.
                                     </small>

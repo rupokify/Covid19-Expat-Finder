@@ -17,11 +17,11 @@ class CreateExpatsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('full_name', 128);
-            $table->string('mobile_number', 24)->nullable();
+            $table->string('mobile_number', 32)->nullable();
             $table->string('email', 128)->nullable();
             $table->string('location')->index();
-            $table->string('location_house', 32)->nullable();
-            $table->string('location_road', 32)->nullable();
+            $table->string('location_house', 128)->nullable();
+            $table->string('location_road', 128)->nullable();
             $table->string('location_area', 128)->nullable();
             $table->string('location_postal_code', 16)->nullable();
             $table->string('gender', 16)->nullable()->index();
