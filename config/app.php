@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Expat COVID Finder'),
+    'name' => env('APP_NAME', 'Expat COVID-19 Finder'),
 
     /*
     |--------------------------------------------------------------------------
@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://expat-finder.mol.la'),
+    'url' => env('APP_URL', 'https://covid.mol.la'),
 
     'asset_url' => env('ASSET_URL', null),
 

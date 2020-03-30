@@ -55,6 +55,7 @@
                                 <ul id="navigation">
                                     <li class="active"><a href="{{ route('home') }}"> Home</a></li>
                                     <li><a href="http://corona.gov.bd/" target="_blank">COVID-19</a></li>
+                                    <li><a href="{{ route('login') }}"><button type="button" class="btn cur-p btn-primary">Login</button></a></li>
                                 </ul>
                             </nav>
                         </div>
