@@ -13,11 +13,17 @@ class AuthController extends Controller
         $this->middleware('guest');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showLogin()
     {
         return view('auth.login');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function showRegister()
     {
         return view('auth.register');
@@ -53,6 +59,10 @@ class AuthController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return RedirectResponse
+     */
     public function authenticate(Request $request)
     {
         $request->validate([
@@ -71,6 +81,9 @@ class AuthController extends Controller
         return redirect()->back();
     }
 
+    /**
+     * @return RedirectResponse
+     */
     public function logout()
     {
         auth()->logout();
