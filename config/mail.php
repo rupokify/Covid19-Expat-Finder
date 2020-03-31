@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => env('MAIL_MAILER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -84,7 +84,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'no-reply@mol.la'),
-        'name' => env('MAIL_FROM_NAME', 'Expat COVID Finder'),
+        'name' => env('MAIL_FROM_NAME', 'Expat COVID-19 Finder'),
     ],
 
     /*
